@@ -4,7 +4,7 @@ RUN apk add curl bash ffmpeg && \
 COPY stream.sh /usr/bin/stream.sh
 RUN chmod +x /usr/bin/stream.sh
 COPY ffserver.conf /etc/ffserver.conf
-ENV RTSP_URL rtsp://onvif:onvif@169.254.5.232//onvif-media/media.amp
+ENV RTSP_URL rtsp://<IP>//onvif-media/media.amp
 ENV FFMPEG_INPUT_OPTS  ""
 ENV FFMPEG_OUTPUT_OPTS  ""
 ENV FFSERVER_LOG_LEVEL "error"
