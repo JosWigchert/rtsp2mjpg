@@ -30,7 +30,7 @@ Still snapshot: `http://<IP>:8090/still2.jpg`
 - Clone the repo
 - Edit docker-compose.yaml for any customizations needed
 - Launch the containers using `docker-compose up -d`
-- To add or change cameras change the RTSP_URL variable in the docker-compose.yaml file with all the camera URIs ";" seperated
+- To add or change cameras change the RTSP_URL variable in the `docker-compose.yaml` file with all the camera URIs `;` seperated
 
 There will be an nginx container included to proxy ffserver. I find that it handles situations where the ffserver backend becomes unresponse better with a timeout reponse.
 
