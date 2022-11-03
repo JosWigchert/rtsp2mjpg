@@ -1,23 +1,23 @@
 version: '3'
 services:
   rtsp2mjpg:
-    image: eroji/rtsp2mjpg
+    image: csi/rtsp2mjpg
     restart: always
     expose:
       - "8090"
     volumes:
       - /etc/localtime:/etc/localtime:ro
       # Uncomment below if you want to override default ffserver.conf
-      # - ./ffserver.conf:/etc/ffserver.conf:ro
+      - ./ffserver.conf:/etc/ffserver.conf:ro
     environment:
       # Override the env vars below as needed
-      RTSP_URL: rtsp://freja.hiof.no:1935/rtplive/definst/hessdalen03.stream
+      RTSP_URL: rtsp://onvif:onvif@169.254.5.232//onvif-media/media.amp;rtsp://onvif:onvif@169.254.5.232//onvif-media/media.amp
       FFSERVER_LOG_LEVEL: error
       FFMPEG_LOG_LEVEL: warning
       FFMPEG_INPUT_OPTS: -use_wallclock_as_timestamps 1
       FFMPEG_OUTPUT_OPTS: -async 1 -vsync 1
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:8090/still.jpg --max-time 1 --output /dev/null || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:8090/still1.jpg --max-time 1 --output /dev/null || exit 1"]
       interval: 15s
       timeout: 1s
       retries: 3
