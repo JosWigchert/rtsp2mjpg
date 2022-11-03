@@ -4,7 +4,7 @@ Below are the environmental variables available and their default value. Overrid
 
 | Variables            | Default                                                      |
 |----------------------|:------------------------------------------------------------:|
-| `RTSP_URL`           | rtsp://onvif:onvif@169.254.5.232//onvif-media/media.amp      |
+| `RTSP_URL`           | rtsp://<IP>//onvif-media/media.amp                           |
 | `FFSERVER_LOG_LEVEL` | error                                                        |
 | `FFMPEG_LOG_LEVEL`   | warning                                                      |
 | `FFMPEG_INPUT_OPTS`  | `empty`                                                      |
